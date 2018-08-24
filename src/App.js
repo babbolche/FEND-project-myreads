@@ -3,13 +3,14 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import BooksList from './BooksList'
 import { Route } from 'react-router-dom'
+import Search from './Search'
 
 class BooksApp extends React.Component {
   state = {
     books: [],
-    status: none
+    search: '',
+    results: []
   }
-
 
     handleChange = (book, shelf) => {
       BooksAPI.update(book, shelf).then(() => {
@@ -36,9 +37,16 @@ class BooksApp extends React.Component {
             change={this.handleChange}
           />
         )}/>
+        <Route path='/search' render={({ history }) => (
+          <Search
+            books={this.state.books}
+            change={this.handleChange}
+          />
+        )}/>
       </div>
     )
   }
+}
 
 
 export default BooksApp
