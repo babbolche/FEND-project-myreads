@@ -12,7 +12,9 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #2a9b07; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #012b05, #2a9b07); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #012b05,#2a9b07);
   text-align: center;
 }
 .list-books-title h1 {
@@ -53,12 +55,12 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #2a9b07;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px black, 0 3px 6px black;
   font-size: 0;
 }
 
@@ -71,11 +73,11 @@ body, .app {
   left: 0;
   z-index: 5;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px black, 0 0 6px black;
 }
 .search-books-input-wrapper {
   flex: 1;
-  background: #e9e;
+ /* background: rgb(219, 240, 30);*/
 }
 .search-books-bar input {
   width: 100%;
@@ -117,6 +119,7 @@ body, .app {
 .books-grid li {
   padding: 10px 15px;
   text-align: left;
+  position: relative;
 }
 
 .book {
@@ -147,12 +150,12 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #2a9b07;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px black, 0 3px 6px black;
 }
 .book-shelf-changer select {
   width: 100%;
@@ -164,11 +167,50 @@ body, .app {
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px black, 0 3px 6px black;
   background: #eee;
+  width: 128px;
+  height: 193px;
 }
 .book-cover-title {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
 }
+
+/*.currentlyReading:before, .wantToRead:before, .read:before, .none:before{
+  position: absolute;
+  z-index:999;
+  top:-2px;
+  display: block;
+  height:auto;
+  width:auto;
+  padding:2px 5px;
+  font-size:12px;
+  color:#fff;
+  min-width:100px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.currentlyReading:before{
+  content:'Currently Reading';
+  background:#c0392b;
+}
+
+.wantToRead:before{
+  content:'Want to Read';
+  background:#f1c40f;
+}
+
+.read:before{
+  content:'Read';
+  background:#2ecc71;
+}
+
+.none:before{
+  content:'No Interest';
+  background:#ccc;
+}
+*/
