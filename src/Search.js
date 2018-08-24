@@ -16,12 +16,13 @@ class Search extends Component {
         results: []
         }
 
+        // Search for book in BookAPI
         searchResult = (search) => {
         this.setState({
             search: search
         })
         if (search){
-            BooksAPI.search(search.trim(), 50).then((results) => {
+            BooksAPI.search(search.trim(), 60).then((results) => {
             if(!results || results.error){
                 this.setState({results: []})
             } else {
@@ -34,6 +35,7 @@ class Search extends Component {
         }
         }
 
+        // Check the result if the book is on shelf or set default value to 'none'
         bookShelf = (results) => {
         for (let result of results){
             result.shelf = "none"

@@ -19,6 +19,7 @@ class BooksList extends Component {
 
         const { books, change} = this.props
 
+        // Filter the books by their shelf
         let current = books.filter((book) => book.shelf === "currentlyReading");
         let read = books.filter((book) => book.shelf === "read");
         let wantToRead = books.filter((book) => book.shelf === "wantToRead");
